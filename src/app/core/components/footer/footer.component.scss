@@ -1,0 +1,14 @@
+@import '../../../shared/vars.scss';
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5%;
+  background-color: $main-color;
+  color: black;
+  div a {
+    text-decoration: none;
+    color: white;
+  }
+}
