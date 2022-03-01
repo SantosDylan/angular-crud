@@ -1,7 +1,8 @@
-@import '../../../shared/vars.scss';
+@import '../../shared/vars.scss';
 
-main.main-content {
+main.login-content {
   display: flex;
+  flex-direction: row-reverse;
   height: 88%;
   div.left-part {
     min-width: 50%;

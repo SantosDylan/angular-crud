@@ -1,4 +1,4 @@
-<div class="header-content">
+<header class="header-content">
   <div class="left-part">
     <div class="header-logo">
       <img src="/assets/logo.svg" class="logo-icon" />
@@ -11,6 +11,11 @@
     </div>
   </div>
   <div class="right-part">
-    <!-- <div class="sign-out">Sign out</div> -->
+    <button *ngIf="router.url == '/login'" [routerLink]="['/register']" mat-raised-button color="primary">
+      Sign up
+    </button>
+    <button *ngIf="router.url == '/register'" [routerLink]="['/login']" mat-raised-button color="primary">
+      Sign in
+    </button>
   </div>
-</div>
+</header>

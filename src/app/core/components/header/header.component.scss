@@ -1,6 +1,6 @@
 @import '../../../shared/vars.scss';
 
-div.header-content {
+header.header-content {
   display: flex;
   align-items: center;
   width: 99vw;
@@ -37,6 +37,7 @@ div.header-content {
     }
   }
   div.right-part {
+    margin-right: 1rem;
     div.sign-out {
       padding-right: 0.5rem;
     }
