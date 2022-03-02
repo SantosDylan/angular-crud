@@ -14,9 +14,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './core/components/footer/footer.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
+import { PasswordErrorMessageComponent } from './views/register/components/password-error-message/password-error-message.component';
+import { EmailErrorMessageComponent } from './views/register/components/email-error-message/email-error-message.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, MainComponent, FooterComponent, LoginComponent, RegisterComponent],
+  declarations: [AppComponent, HeaderComponent, MainComponent, FooterComponent, LoginComponent, RegisterComponent, PasswordErrorMessageComponent, EmailErrorMessageComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

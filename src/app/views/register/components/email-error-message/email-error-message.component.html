@@ -1,0 +1,4 @@
+<mat-error *ngIf="!signUpForm.controls['email'].valid && signUpForm.controls['email'].dirty">
+  <mat-icon [inline]="true" color="warn">info</mat-icon>
+  <p>E-mail must contain '@'</p>
+</mat-error>

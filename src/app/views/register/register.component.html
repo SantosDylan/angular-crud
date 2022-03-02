@@ -1,18 +1,20 @@
 <main class="main-content">
   <div class="left-part">
-    <form>
+    <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
       <mat-form-field appearance="fill">
-        <mat-label>Enter your email</mat-label>
-        <input matInput />
+        <mat-label>Create your email</mat-label>
+        <input matInput formControlName="email" />
+        <register-email-error-message [signUpForm]="signUpForm"></register-email-error-message>
       </mat-form-field>
       <mat-form-field appearance="fill">
         <mat-label>Create your password</mat-label>
-        <input matInput [type]="hide ? 'password' : 'text'" />
+        <input matInput formControlName="password" [type]="hide ? 'password' : 'text'" />
         <button mat-icon-button matSuffix (click)="hide = !hide">
           <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
         </button>
+        <register-password-error-message [signUpForm]="signUpForm"></register-password-error-message>
       </mat-form-field>
-      <button mat-raised-button color="primary">Sign up</button>
+      <button type="submit" [disabled]="!signUpForm.valid" mat-raised-button color="primary">Sign up</button>
     </form>
   </div>
   <div class="right-part">

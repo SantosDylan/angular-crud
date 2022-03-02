@@ -17,6 +17,10 @@ main.main-content {
       justify-content: center;
       height: 100%;
       padding: 0px 67px;
+
+      .mat-form-field {
+        margin-bottom: 1rem;
+      }
     }
   }
   div.right-part {
