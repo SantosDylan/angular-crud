@@ -3,7 +3,7 @@
     <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
       <mat-form-field appearance="fill">
         <mat-label>Create your email</mat-label>
-        <input matInput formControlName="email" />
+        <input matInput clickOutside formControlName="email" />
         <register-email-error-message [signUpForm]="signUpForm"></register-email-error-message>
       </mat-form-field>
       <mat-form-field appearance="fill">

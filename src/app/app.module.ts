@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './core/components/header/header.component';
@@ -16,13 +16,24 @@ import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 import { PasswordErrorMessageComponent } from './views/register/components/password-error-message/password-error-message.component';
 import { EmailErrorMessageComponent } from './views/register/components/email-error-message/email-error-message.component';
+import { CrudInterceptor } from './shared/interceptor/interceptor';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, MainComponent, FooterComponent, LoginComponent, RegisterComponent, PasswordErrorMessageComponent, EmailErrorMessageComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    MainComponent,
+    FooterComponent,
+    LoginComponent,
+    RegisterComponent,
+    PasswordErrorMessageComponent,
+    EmailErrorMessageComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
@@ -30,7 +41,7 @@ import { EmailErrorMessageComponent } from './views/register/components/email-er
     MatButtonModule,
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: CrudInterceptor, multi: true }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

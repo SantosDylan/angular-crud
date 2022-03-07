@@ -1,18 +1,52 @@
 {
-  "posts": [
+  "users": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "email": "dylan99.santos@gmail.com",
+      "password": "$2a$10$4/UkWAUxmfIUvPWnfOHSuej52JKSIq6nG7I2QIJ/tSGZCwnW1.QRG",
+      "id": 1
+    },
+    {
+      "email": "dylan99.santos@gmail.comm",
+      "password": "$2a$10$dljmeSQwYEZu0tOhilh3k.vSGIDgn2Kjh9G6vFPvap.Y82wWOYLwy",
+      "id": 2
+    },
+    {
+      "email": "dldldl@ml",
+      "password": "$2a$10$g2qATS.T1HZHSRey.H2Kk.PojYqFio5huP7vmJIxjD4xYXh/NpmKq",
+      "id": 3
+    },
+    {
+      "email": "dylan99.santos@gmail.commmmm",
+      "password": "$2a$10$C2ZHe3hqWaZambBha9WsU.JNg/TG8I6oa6mIubxXh3yWMYvpRxD2m",
+      "id": 4
+    },
+    {
+      "email": "dylan99.santos@gmail.comaaa",
+      "password": "$2a$10$Tfff/vAfGgAuBGxLW.Rc5.cxrT90kavRPDsS.t7qyzrPwjvxD7eGG",
+      "id": 5
+    },
+    {
+      "email": "dylan99.santos@gmail.commlkmlk",
+      "password": "$2a$10$NHyRC.0enqf1UwuOJoFHxOsklv09BXdEedVs1WdCCzFqW1MYfZJCq",
+      "id": 6
+    },
+    {
+      "email": "azerty@azerty.com",
+      "password": "$2a$10$QIUM6iEnVFRsIzJZQsEoTeQyxoBJnzNtpx764ZehHIbgcKMJN4EHi",
+      "id": 7
+    },
+    {
+      "email": "dylan99.santos@gmail.commm",
+      "password": "$2a$10$elU60JWMDnbeCZ7SSmMjaeow21mIMTVwINNpZ6cbR9KwG3vRBPAMW",
+      "id": 8
     }
   ],
-  "comments": [
+  "messages": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "name": "test",
+      "descritpion": "test",
+      "userId": 7,
+      "id": 1
     }
-  ],
-  "users": {
-  }
+  ]
 }
