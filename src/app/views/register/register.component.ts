@@ -59,7 +59,6 @@ export class RegisterComponent implements OnInit {
         localStorage['token'] = newUser.accessToken;
         this.router.navigate(['/login']);
       },
-      error: (error: Error) => console.log(error),
     });
   }
 }

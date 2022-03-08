@@ -4,17 +4,12 @@ import { FormGroup } from '@angular/forms';
 @Component({
   selector: 'register-password-error-message',
   templateUrl: './password-error-message.component.html',
-  styleUrls: ['./password-error-message.component.scss']
+  styleUrls: ['./password-error-message.component.scss'],
 })
 export class PasswordErrorMessageComponent implements OnInit {
+  @Input() signUpForm!: FormGroup;
 
-  @Input() signUpForm!: FormGroup
+  constructor() {}
 
-  constructor() {
-    console.log(this.signUpForm)
-  }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
