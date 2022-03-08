@@ -11,8 +11,6 @@ export class CustomValidators {
       const valid = regex.test(control.value);
 
       // if true, return no error (no error), else return error passed in the second parameter
-      console.log(error);
-
       return valid ? null : error;
     };
   }

@@ -39,6 +39,11 @@
       "email": "dylan99.santos@gmail.commm",
       "password": "$2a$10$elU60JWMDnbeCZ7SSmMjaeow21mIMTVwINNpZ6cbR9KwG3vRBPAMW",
       "id": 8
+    },
+    {
+      "email": "q@gmail.com",
+      "password": "$2a$10$qEDYtbU3AjVduhvV2Id/f.pBQy8G7Lp.qMOV6iA.xFCBX.uZije8O",
+      "id": 9
     }
   ],
   "messages": [

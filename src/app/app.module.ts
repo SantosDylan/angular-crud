@@ -17,6 +17,7 @@ import { RegisterComponent } from './views/register/register.component';
 import { PasswordErrorMessageComponent } from './views/register/components/password-error-message/password-error-message.component';
 import { EmailErrorMessageComponent } from './views/register/components/email-error-message/email-error-message.component';
 import { CrudInterceptor } from './shared/interceptor/interceptor';
+import { CommentsComponent } from './views/comments/comments.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { CrudInterceptor } from './shared/interceptor/interceptor';
     RegisterComponent,
     PasswordErrorMessageComponent,
     EmailErrorMessageComponent,
+    CommentsComponent,
   ],
   imports: [
     BrowserModule,
