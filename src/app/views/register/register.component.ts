@@ -15,6 +15,8 @@ import { User } from 'src/app/shared/interface/user.interface';
 export class RegisterComponent implements OnInit {
   hide: boolean = true;
 
+  test = this.fb;
+
   signUpForm: FormGroup = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
     password: [

@@ -1,18 +1,36 @@
 <main class="login-content">
   <div class="left-part">
-    <form>
+    <form [formGroup]="loginForm" (ngSubmit)="signIn()">
+      <div *ngIf="error_message" class="error-alert">
+        <div>
+          <mat-icon [inline]="true" color="warn">info</mat-icon>
+          <div>{{ error_message }}</div>
+        </div>
+        <button mat-icon-button (click)="error_message = ''">
+          <mat-icon>clear</mat-icon>
+        </button>
+      </div>
       <mat-form-field appearance="fill">
         <mat-label>Enter your email</mat-label>
-        <input matInput />
+        <input formControlName="email" matInput />
+        <mat-error *ngIf="!loginForm.controls['email'].valid && loginForm.controls['email'].touched">
+          <mat-icon [inline]="true" color="warn">info</mat-icon>
+          <p>Email required</p>
+        </mat-error>
       </mat-form-field>
+
       <mat-form-field appearance="fill">
         <mat-label>Enter your password</mat-label>
-        <input matInput [type]="hide ? 'password' : 'text'" />
+        <input formControlName="password" matInput [type]="hide ? 'password' : 'text'" />
         <button mat-icon-button matSuffix (click)="hide = !hide">
           <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
         </button>
+        <mat-error *ngIf="!loginForm.controls['password'].valid && loginForm.controls['password'].touched">
+          <mat-icon [inline]="true" color="warn">info</mat-icon>
+          <p>Password required</p>
+        </mat-error>
       </mat-form-field>
-      <button mat-raised-button color="primary">Sign in</button>
+      <button mat-raised-button color="primary" [disabled]="!loginForm.valid">Sign in</button>
     </form>
   </div>
   <div class="right-part">
