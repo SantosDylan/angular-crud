@@ -10,6 +10,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './core/components/footer/footer.component';
@@ -19,6 +20,7 @@ import { PasswordErrorMessageComponent } from './views/register/components/passw
 import { EmailErrorMessageComponent } from './views/register/components/email-error-message/email-error-message.component';
 import { CrudInterceptor } from './shared/interceptor/interceptor';
 import { CommentsComponent } from './views/comments/comments.component';
+import { CreationPopup } from './views/comments/components/creation-popup/creation-popup.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,7 @@ import { CommentsComponent } from './views/comments/comments.component';
     PasswordErrorMessageComponent,
     EmailErrorMessageComponent,
     CommentsComponent,
+    CreationPopup,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +43,7 @@ import { CommentsComponent } from './views/comments/comments.component';
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatDialogModule,
     MatIconModule,
     MatButtonModule,
     MatTableModule,
