@@ -1,5 +1,4 @@
 {
   "users": 600,
-  "messages": 644,
-  "/posts/:category": "/posts?category=:category"
+  "comments": 644
 }
