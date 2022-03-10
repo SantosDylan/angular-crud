@@ -1,21 +1,26 @@
 @import '../../../themes.scss';
 
 main {
-  height: 65%;
-  padding: 100px;
+  height: 88%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: map-get($map: $angular-crud-primary, $key: 50);
 
-  .add-comment-button {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 1rem;
-  }
+  div.table-content {
+    width: 80%;
+    .add-comment-button {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 1rem;
+    }
 
-  .mat-table {
-    width: 100%;
-  }
+    .mat-table {
+      width: 100%;
+    }
 
-  .mat-row:nth-child(2n + 1) {
-    background-color: map-get($map: $angular-crud-primary, $key: 100);
+    .mat-row:nth-child(2n + 1) {
+      background-color: map-get($map: $angular-crud-primary, $key: 100);
+    }
   }
 }

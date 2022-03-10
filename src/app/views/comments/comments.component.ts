@@ -1,12 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-import { MatTable } from '@angular/material/table';
+import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { Comments } from 'src/app/shared/interface/comments.interface';
 import { LoggedInUser } from 'src/app/shared/interface/logged-in-user.interface';
 import { CommentsService } from 'src/app/shared/service/comments/comments.service';
-import { UserService } from 'src/app/shared/service/user.service';
 import { CreationPopup } from './components/creation-popup/creation-popup.component';
 
 @Component({
@@ -17,9 +15,10 @@ import { CreationPopup } from './components/creation-popup/creation-popup.compon
 export class CommentsComponent implements OnInit {
   loggedInUser: LoggedInUser;
   displayedColumns: string[] = ['id', 'created_at', 'title', 'description'];
-  data: Comments[] = [];
+  data: MatTableDataSource<Comments>;
 
   @ViewChild(MatTable) table: MatTable<Comments>;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(private commentsService: CommentsService, private dialog: MatDialog) {
     this.loggedInUser = JSON.parse(localStorage['loggedInUser']);
@@ -27,7 +26,10 @@ export class CommentsComponent implements OnInit {
 
   ngOnInit(): void {
     this.commentsService.get(this.loggedInUser).subscribe({
-      next: (_comments: Comments[]) => (this.data = _comments),
+      next: (_comments: Comments[]) => {
+        this.data = new MatTableDataSource(_comments);
+        this.data.paginator = this.paginator;
+      },
     });
   }
 
@@ -39,8 +41,8 @@ export class CommentsComponent implements OnInit {
         newComment = { ...newComment, createdAt: new Date().toUTCString(), userId: this.loggedInUser.user.id };
         this.commentsService.post(newComment).subscribe({
           next: (_newComment: Comments) => {
-            this.data.push(_newComment);
-            this.table.renderRows();
+            this.data.data.push(_newComment);
+            this.data.filter = '';
           },
         });
       }

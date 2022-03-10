@@ -13,12 +13,7 @@
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Cancel</button>
-  <button
-    mat-button
-    [disabled]="!commentForm.valid"
-    [mat-dialog-close]="commentForm.value"
-    cdkFocusInitial
-    color="primary">
+  <button mat-raised-button [disabled]="!commentForm.valid" [mat-dialog-close]="commentForm.value" color="primary">
     Create
   </button>
 </mat-dialog-actions>
