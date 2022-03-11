@@ -1,54 +1,6 @@
 {
   "users": [
-    {
-      "email": "azerty@azerty.com",
-      "password": "$2a$10$QIUM6iEnVFRsIzJZQsEoTeQyxoBJnzNtpx764ZehHIbgcKMJN4EHi",
-      "id": 7
-    },
-    {
-      "email": "dylan99.santos@gmail.com",
-      "password": "$2a$10$elU60JWMDnbeCZ7SSmMjaeow21mIMTVwINNpZ6cbR9KwG3vRBPAMW",
-      "id": 8
-    },
-    {
-      "email": "q@gmail.com",
-      "password": "$2a$10$qEDYtbU3AjVduhvV2Id/f.pBQy8G7Lp.qMOV6iA.xFCBX.uZije8O",
-      "id": 9
-    },
-    {
-      "email": "test@test.com",
-      "password": "$2a$10$BHDFWxLNQxKbrAKfcpUdzOZvW2ObSI2uXacsct0b.ngBNiUe2mwtK",
-      "id": 10
-    }
   ],
   "comments": [
-    {
-      "title": "a",
-      "description": "bbbbb",
-      "createdAt": "Thu, 10 Mar 2022 09:48:21 GMT",
-      "userId": 7,
-      "id": 19
-    },
-    {
-      "title": "kkkk",
-      "description": "mmmmmm",
-      "createdAt": "Thu, 10 Mar 2022 09:48:25 GMT",
-      "userId": 7,
-      "id": 20
-    },
-    {
-      "title": "ccccclcl",
-      "description": "aaaaaaaaaa",
-      "createdAt": "Thu, 10 Mar 2022 09:50:34 GMT",
-      "userId": 7,
-      "id": 21
-    },
-    {
-      "title": "mlkmlk",
-      "description": "mlkmlkmlk",
-      "createdAt": "Thu, 10 Mar 2022 09:50:49 GMT",
-      "userId": 7,
-      "id": 23
-    }
   ]
 }
