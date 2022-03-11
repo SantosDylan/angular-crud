@@ -24,4 +24,12 @@ export class CommentsService {
   post(newComment: Comments): Observable<Comments> {
     return this.http.post<Comments>(this.commentsUrl, newComment);
   }
+
+  put(editedComment: Comments): Observable<Comments> {
+    return this.http.put<Comments>(`${this.commentsUrl}/${editedComment.id}`, editedComment);
+  }
+
+  delete(deletedComment: Comments): Observable<Comments> {
+    return this.http.delete<Comments>(`${this.commentsUrl}/${deletedComment.id}`);
+  }
 }

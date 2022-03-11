@@ -22,5 +22,9 @@ main {
     .mat-row:nth-child(2n + 1) {
       background-color: map-get($map: $angular-crud-primary, $key: 100);
     }
+
+    .actions-button {
+      cursor: pointer;
+    }
   }
 }

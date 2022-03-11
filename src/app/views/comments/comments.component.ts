@@ -6,6 +6,8 @@ import { Comments } from 'src/app/shared/interface/comments.interface';
 import { LoggedInUser } from 'src/app/shared/interface/logged-in-user.interface';
 import { CommentsService } from 'src/app/shared/service/comments/comments.service';
 import { CreationPopup } from './components/creation-popup/creation-popup.component';
+import { DeletedPopup } from './components/deleted-popup/deleted-popup.component';
+import { EditionPopup } from './components/edition-popup/edition-popup.component';
 
 @Component({
   selector: 'app-comments',
@@ -14,7 +16,7 @@ import { CreationPopup } from './components/creation-popup/creation-popup.compon
 })
 export class CommentsComponent implements OnInit {
   loggedInUser: LoggedInUser;
-  displayedColumns: string[] = ['id', 'created_at', 'title', 'description'];
+  displayedColumns: string[] = ['id', 'created_at', 'title', 'description', 'actions'];
   data: MatTableDataSource<Comments>;
 
   @ViewChild(MatTable) table: MatTable<Comments>;
@@ -43,6 +45,48 @@ export class CommentsComponent implements OnInit {
           next: (_newComment: Comments) => {
             this.data.data.push(_newComment);
             this.data.filter = '';
+          },
+        });
+      }
+    });
+  }
+
+  openEditionPopUp(editedComment: Comments) {
+    const dialogRef = this.dialog.open(EditionPopup, { data: { editedComment: editedComment } });
+
+    dialogRef.afterClosed().subscribe((formValue: Comments) => {
+      if (formValue) {
+        editedComment.title = formValue.title;
+        editedComment.description = formValue.description;
+        this.commentsService.put(editedComment).subscribe({
+          next: (_editedComment: Comments) => {
+            const tmp_data = this.data.data.filter((comment: Comments) => {
+              if (comment.id == _editedComment.id) {
+                comment.title = _editedComment.title;
+                comment.description = _editedComment.description;
+              }
+              return true;
+            });
+            this.data.data = [];
+            this.data.data = tmp_data;
+          },
+        });
+      }
+    });
+  }
+
+  openDeletedPopUp(deletedComment: Comments) {
+    const dialogRef = this.dialog.open(DeletedPopup, {
+      width: '500px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.commentsService.delete(deletedComment).subscribe({
+          next: result => {
+            const tmp_data = this.data.data.filter(comment => comment.id !== deletedComment.id);
+            this.data.data = [];
+            this.data.data = tmp_data;
           },
         });
       }

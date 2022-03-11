@@ -22,6 +22,8 @@ import { EmailErrorMessageComponent } from './views/register/components/email-er
 import { CrudInterceptor } from './shared/interceptor/interceptor';
 import { CommentsComponent } from './views/comments/comments.component';
 import { CreationPopup } from './views/comments/components/creation-popup/creation-popup.component';
+import { DeletedPopup } from './views/comments/components/deleted-popup/deleted-popup.component';
+import { EditionPopup } from './views/comments/components/edition-popup/edition-popup.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { CreationPopup } from './views/comments/components/creation-popup/creati
     EmailErrorMessageComponent,
     CommentsComponent,
     CreationPopup,
+    DeletedPopup,
+    EditionPopup,
   ],
   imports: [
     BrowserModule,

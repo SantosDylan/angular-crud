@@ -28,6 +28,14 @@
         <th mat-header-cell *matHeaderCellDef>Description</th>
         <td mat-cell *matCellDef="let element">{{ element.description }}</td>
       </ng-container>
+      <!-- Action Column -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let element">
+          <mat-icon class="actions-button" (click)="openEditionPopUp(element)" color="primary">edit</mat-icon>
+          <mat-icon class="actions-button" (click)="openDeletedPopUp(element)" color="primary">delete</mat-icon>
+        </td>
+      </ng-container>
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let element; columns: displayedColumns"></tr>
     </table>
