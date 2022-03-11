@@ -1,15 +1,10 @@
-@import '../../shared/vars.scss';
+@import '../../../styles/themes.scss';
 
 main.main-content {
   display: flex;
   height: 88%;
   div.left-part {
     min-width: 50%;
-
-    button.validate-button {
-      background-color: $main-color;
-      color: white;
-    }
 
     form {
       display: flex;
@@ -24,7 +19,7 @@ main.main-content {
     }
   }
   div.right-part {
-    background-color: $main-light-color;
+    background-color: map-get($map: $angular-crud-primary, $key: 50);
     display: flex;
     justify-content: center;
 

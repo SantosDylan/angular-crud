@@ -1,12 +1,12 @@
-@import '../../../shared/vars.scss';
+@import '../../../../styles/themes.scss';
 
 footer {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 5%;
-  background-color: $main-color;
-  color: black;
+  background-color: $primary;
+  color: $contrast-primary;
   div a {
     text-decoration: none;
     color: white;

@@ -41,11 +41,44 @@ $md-primarypalette: (
   ),
 );
 
+/* For use in src/lib/core/theming/_palette.scss */
+$md-accent: (
+  50: #e7f9e6,
+  100: #c4f1c2,
+  200: #9de899,
+  300: #76df70,
+  400: #58d851,
+  500: #3bd132,
+  600: #35cc2d,
+  700: #2dc626,
+  800: #26c01f,
+  900: #19b513,
+  A100: #e6ffe5,
+  A200: #b4ffb3,
+  A400: #83ff80,
+  A700: #6aff66,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 $angular-crud-primary: mat.define-palette($md-primarypalette, 500);
-$angular-crud-accent: mat.define-palette($md-primarypalette, A200, A100, A400);
+$angular-crud-accent: mat.define-palette($md-accent, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
 $angular-crud-warn: mat.define-palette(mat.$red-palette);
@@ -67,21 +100,30 @@ $angular-crud-theme: mat.define-light-theme(
 // that you are using.
 @include mat.all-component-themes($angular-crud-theme);
 
-/* You can add global styles to this file, and also import other style files */
+$primary: map-get(
+  $map: $angular-crud-primary,
+  $key: 500,
+);
 
-@import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
+$contrast-primary: mat-color(
+  map-get(
+    $map: $angular-crud-primary,
+    $key: 500,
+  ),
+  default-contrast
+);
 
-* {
-  padding: 0;
-  margin: 0;
-  font-family: 'Sora', sans-serif;
-}
+$light-primary: map-get(
+  $map: $angular-crud-primary,
+  $key: 50,
+);
 
-html,
-body {
-  height: 100%;
-}
-body {
-  margin: 0;
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
-}
+$warn: map-get(
+  $map: $angular-crud-warn,
+  $key: 500,
+);
+
+$accent: map-get(
+  $map: $angular-crud-accent,
+  $key: 500,
+);

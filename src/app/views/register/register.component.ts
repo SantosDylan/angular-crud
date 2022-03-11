@@ -1,6 +1,6 @@
 import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { CustomValidators } from 'src/app/shared/class/custom-validators';
+import { CustomValidators } from 'src/app/shared/class/custom-validators/custom-validators';
 import { from } from 'rxjs';
 import { map, filter } from 'rxjs/operators';
 import { UserService } from 'src/app/shared/service/user.service';
