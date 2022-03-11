@@ -1,27 +1,59 @@
+
 # AngularCrud
+
+
+## 📄 Description
+
+This aplication is a simple CRUD with Login/Register page.
+
+
+<div>
+  <p><img src="https://imgur.com/LWigqqc.png" alt="Login | Angular CRUD (Angular Material)" width="800"></p>
+  <p><img src="https://i.imgur.com/p3NLuWf.png" alt="Register Page | Angular CRUD (Angular Material)" width="800"></p>
+  <p><img src="https://i.imgur.com/UUIKgE7.png" alt="Crud Page | Angular CRUD (Angular Material)" width="800"></p>
+
+</div>
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.4.
 
-## Development server
+The database was generated with :
+- [JSON Server](https://github.com/typicode/json-server)
+- [JSON Server Auth](https://github.com/jeremyben/json-server-auth#readme)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+Other Ressources: 
+- Material Design components for Angular [Angular Material](https://material.angular.io/)
+- The images come this [unDraw](https://undraw.co/illustrations)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# 🔨 Getting Started
 
-## Build
+## Quick cloning
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
+$ git clone git@gitlab.com:SantosDylan/angular-crud.git
+```
 
-## Running unit tests
+## Setup
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+$ cd angular-crud
+$ npm install
+```
 
-## Running end-to-end tests
+## Building
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```
+$ json-server db.json -m ./node_modules/json-server-auth -r routes.json
+$ ng serve
+```
 
-## Further help
+## Call for Contributions
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Theme custom (Materiel UI)
+- Json server ([https://my-json-server.typicode.com/](https://my-json-server.typicode.com/))
+- FormGroup, Validators ([https://stackblitz.com/github/MainaWycliffe/ng-bootstrap-password-validation-example?file=src%2Fapp%2Fapp.component.html](https://stackblitz.com/github/MainaWycliffe/ng-bootstrap-password-validation-example?file=src%2Fapp%2Fapp.component.html))
+- Local Storage
+- HttpClient
+- Interceptor
+- RouterOutlet, RouterLink, CanActivate
