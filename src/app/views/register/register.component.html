@@ -9,7 +9,7 @@
       <mat-form-field appearance="fill">
         <mat-label>Create your password</mat-label>
         <input matInput formControlName="password" [type]="hide ? 'password' : 'text'" />
-        <button mat-icon-button matSuffix (click)="hide = !hide">
+        <button type="button" mat-icon-button matSuffix (click)="hide = !hide">
           <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
         </button>
         <register-password-error-message [signUpForm]="signUpForm"></register-password-error-message>

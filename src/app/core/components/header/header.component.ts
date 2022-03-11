@@ -12,7 +12,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {}
 
   signOut(): void {
-    console.log(localStorage['loggedInUser']);
     localStorage['loggedInUser'] = undefined;
     this.router.navigate(['/login']);
   }

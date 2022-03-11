@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   signIn(): void {
+    console.log('oui');
     this.userService.login(this.loginForm.value).subscribe({
       next: (loggedInUser: User) => {
         localStorage['loggedInUser'] = JSON.stringify(loggedInUser);

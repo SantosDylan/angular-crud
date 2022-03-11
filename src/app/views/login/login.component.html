@@ -22,7 +22,7 @@
       <mat-form-field appearance="fill">
         <mat-label>Enter your password</mat-label>
         <input formControlName="password" matInput [type]="hide ? 'password' : 'text'" />
-        <button mat-icon-button matSuffix (click)="hide = !hide">
+        <button type="button" mat-icon-button matSuffix (click)="hide = !hide">
           <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
         </button>
         <mat-error *ngIf="!loginForm.controls['password'].valid && loginForm.controls['password'].touched">
@@ -30,7 +30,7 @@
           <p>Password required</p>
         </mat-error>
       </mat-form-field>
-      <button mat-raised-button color="primary" [disabled]="!loginForm.valid">Sign in</button>
+      <button type="submit" mat-raised-button color="primary" [disabled]="!loginForm.valid">Sign in</button>
     </form>
   </div>
   <div class="right-part">
