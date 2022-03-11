@@ -7,8 +7,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  constructor(public router: Router) {
-  }
+  constructor(public router: Router) {}
 
   ngOnInit(): void {}
+
+  signOut(): void {
+    console.log(localStorage['loggedInUser']);
+    localStorage['loggedInUser'] = undefined;
+    this.router.navigate(['/login']);
+  }
 }

@@ -17,5 +17,6 @@
     <button *ngIf="router.url == '/register'" [routerLink]="['/login']" mat-raised-button color="primary">
       Sign in
     </button>
+    <button *ngIf="router.url == '/comments'" (click)="signOut()" mat-raised-button color="primary">Sign out</button>
   </div>
 </header>
